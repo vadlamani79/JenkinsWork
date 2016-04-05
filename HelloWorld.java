@@ -1,4 +1,4 @@
-package com.mahi
+package com.mahi;
 
 class Hello{
 
