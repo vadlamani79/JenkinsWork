@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script type="text/javascript" src="angular.min.js"></script>
+	<script type="text/javascript" src="bootstrap.min.js"></script>
+</head>
+<body>	
+	<div data-ng-init="movies=[{name:'Simha',Year:'2009'},{name:'Legend',Year:'2011'},{name:'Dictator',Year:'2014'}]">
+		<div style="padding:5px">
+			<p><input placeholder="Type to search ..." type="text" ng-model="searchFor" size="30"/></p>
+			<p>There are {{movies.length}} movies to view:</p>
+		</div>
+
+		<div class="album panel panel-primary" data-ng-repeat="movie in movies | filter:{name:searchFor}">
+			<div class="panel-heading">{{movie.name}}</div>
+			<div class="desc">
+				Movie {{movie.name}} released in {{movie.Year}}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
